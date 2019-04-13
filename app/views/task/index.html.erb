@@ -1,0 +1,14 @@
+<h1>Task Index<h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.name %></td>
+      <td><%= link_to 'Show', task_path(task) %></td>
+    </tr>
+  <% end %>
+</table>
