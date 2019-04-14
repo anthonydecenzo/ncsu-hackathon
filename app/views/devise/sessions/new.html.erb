@@ -29,3 +29,32 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="#">Home</a>
+
+          <% if !user_signed_in? %>
+          <a class="nav-link" href="http://142.93.202.103/users/sign_in">Login</a>
+          <a class="nav-link" href="http://142.93.202.103/users/sign_up">Register</a>
+          <% end %>
+
+          <% if user_signed_in? %>
+            <a class="nav-link" href="http://localhost:3000/tasks/index">My Tasks</a>
+          <% end %>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main" class="inner cover">
+      <h1 class="cover-heading">Automated Hydroponic System</h1>
+      <p class="lead"> One stop shop for automated hydroponics</p>
+    </main>
+
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      </div>
+    </footer>
+  </div>

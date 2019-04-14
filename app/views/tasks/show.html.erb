@@ -1,14 +1,35 @@
 
-<table>
 
 
 
-<tr> <%= @task.name %></tr> |
-<% if @task.water == 'f' %>
-<tr>Does not need water</tr>
-<% end %>
 
-<% if @task.water != 'f' %>
-<tr> Refill water </tr>
-<% end %>
-</table>
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+
+      <div class="inner">
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="http://142.93.202.103/welcome/index">Home</a>
+          <% if !user_signed_in? %>
+          <a class="nav-link" href="http://142.93.202.103/users/sign_in">Login</a>
+          <a class="nav-link" href="http://142.93.202.103/users/sign_up">Register</a>
+          <% end %>
+
+          <% if user_signed_in? %>
+            <a class="nav-link" href="http://localhost:3000/tasks/index">My Tasks</a>
+          <% end %>
+        </nav>
+      </div>
+
+
+    <main role="main" class="inner cover">
+      <table>
+        <tr> <%= @task.name %>
+        <% if @task.water == 'f' %>
+        | Does not need water
+        <% end %>
+
+        <% if @task.water != 'f' %>
+        | Refill water
+        <% end %></tr>
+      </table>
+    </main>
+</div>

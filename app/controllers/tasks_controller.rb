@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+
   def index
     @tasks = Task.all
   end
@@ -26,7 +27,7 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    
+
     if @task.update(task_params)
         redirect_to @task
     else

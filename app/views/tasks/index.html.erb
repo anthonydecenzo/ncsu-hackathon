@@ -1,14 +1,32 @@
-<h1>Task Index<h1>
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
 
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
+      <div class="inner">
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="http://localhost:3000/welcome/index">Home</a>
+          <% if !user_signed_in? %>
+          <a class="nav-link" href="http://142.93.202.103/users/sign_in">Login</a>
+          <a class="nav-link" href="http://142.93.202.103/users/sign_up">Register</a>
+          <% end %>
 
-  <% @tasks.each do |task| %>
-    <tr>
-      <td><%= task.name %></td>
-      <td><%= link_to 'Show', task_path(task) %></td>
-    </tr>
-  <% end %>
-</table>
+          <% if user_signed_in? %>
+            <a class="nav-link" href="http://142.93.202.103/tasks/index">My Tasks</a>
+          <% end %>
+        </nav>
+      </div>
+
+
+    <main role="main" class="inner cover">
+      <table>
+        <tr>
+          <th>Name</th>
+        </tr>
+
+        <% @tasks.each do |task| %>
+          <tr>
+            <td><%= task.name %></td>
+            <td><%= link_to 'Show', task_path(task) %></td>
+          </tr>
+        <% end %>
+      </table>
+    </main>
+</div>

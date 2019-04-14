@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'task/new'
   get 'task/edit'
   get 'task/destroy'
+  get 'welcome/index'
 
   post 'tasks/new'
 
