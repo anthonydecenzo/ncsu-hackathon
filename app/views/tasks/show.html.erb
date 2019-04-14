@@ -21,15 +21,6 @@
 
 
     <main role="main" class="inner cover">
-      <table>
-        <tr> <%= @task.name %>
-        <% if @task.water == 'f' %>
-        | Does not need water
-        <% end %>
-
-        <% if @task.water != 'f' %>
-        | Refill water
-        <% end %></tr>
-      </table>
+        <%= render partial: 'task', locals: {task: @task}  %>
     </main>
 </div>

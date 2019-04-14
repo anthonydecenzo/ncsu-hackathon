@@ -40,6 +40,14 @@ class TasksController < ApplicationController
 
   end
 
+  def from_task_db
+      @selectedTask = Task.find(params[:id])
+
+      respond_to do |format|
+        format.js
+      end
+  end
+
   private
   def task_params
     params.require(:task).permit(:name, :water)

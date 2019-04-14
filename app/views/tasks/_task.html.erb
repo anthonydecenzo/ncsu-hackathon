@@ -1,0 +1,12 @@
+<table>
+  <tr> <%= @task.name %>
+  <% if @task.water == 'f' %>
+  | Does not need water
+  <% end %>
+
+  <% if @task.water != 'f' %>
+  | Refill water
+  <% end %></tr>
+
+  <tr> | Cabbage </tr>
+</table>

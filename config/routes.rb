@@ -3,13 +3,14 @@ Rails.application.routes.draw do
   get 'tasks/index'
   get 'tasks/create'
   get 'tasks/new'
-  get 'tasks/show'
+  #get 'tasks/show'
   get 'tasks/edit'
   get 'task/index'
   get 'task/new'
   get 'task/edit'
   get 'task/destroy'
   get 'welcome/index'
+  get "tasks/show" => 'tasks#from_tasks'
 
   post 'tasks/new'
 

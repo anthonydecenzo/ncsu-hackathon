@@ -24,7 +24,8 @@
         <% @tasks.each do |task| %>
           <tr>
             <td><%= task.name %></td>
-            <td><%= link_to 'Show', task_path(task) %></td>
+            <td>    <%= link_to 'Show', task_path(task) %>    </td>
+                <td>    Cabbage </td>
           </tr>
         <% end %>
       </table>
