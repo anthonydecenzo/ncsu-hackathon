@@ -1,2 +1,14 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+
+<table>
+
+
+
+<tr> <%= @task.name %></tr> |
+<% if @task.water == 'f' %>
+<tr>Does not need water</tr>
+<% end %>
+
+<% if @task.water != 'f' %>
+<tr> Refill water </tr>
+<% end %>
+</table>
