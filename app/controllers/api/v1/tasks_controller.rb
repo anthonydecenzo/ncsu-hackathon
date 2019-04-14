@@ -19,10 +19,14 @@ class Api::V1::TasksController < ApplicationController
     json_response(@task, :created)
   end
 
-  def updated
+  def update
+    @task = Task.find(params[:id])
     @task.update(task_params)
+  end
 
-    #head :no_content
+  def edit
+    @task = Task.find(params[:id])
+
   end
 
   private
@@ -32,6 +36,6 @@ class Api::V1::TasksController < ApplicationController
     end
 
     def task_params
-      params.permit(:name, :user_id)
+      params.permit(:name, :user_id, :water)
     end
 end
