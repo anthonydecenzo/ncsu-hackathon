@@ -7,6 +7,7 @@ class CreateTasks < ActiveRecord::Migration[5.2]
       t.string :potassium
       t.date :LastWaterTime
       t.date :NextWaterTime
+      t.string :water, :default => false
       t.string :PlantType
 
       t.references :user, foreign_key: true

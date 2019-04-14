@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_04_13_153744) do
     t.string "potassium"
     t.date "LastWaterTime"
     t.date "NextWaterTime"
+    t.string "water", default: "f"
     t.string "PlantType"
     t.integer "user_id"
     t.datetime "created_at", null: false

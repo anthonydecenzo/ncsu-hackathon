@@ -4,7 +4,8 @@ class Api::V1::TasksController < ApplicationController
     @task = Task.find(params[:id])
     render json: {
       id: @task.id,
-      name: @task.name
+      name: @task.name,
+      water: @task.water
     }
   end
 
